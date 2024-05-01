@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3bbac00-5d71-4c8c-a0fa-5fb35a35efc6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/emit_logs.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/receive_logs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="c3bbac00-5d71-4c8c-a0fa-5fb35a35efc6" name="Changes" comment="Publish/suscribe">
+      <change afterPath="$PROJECT_DIR$/Menu.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -76,10 +74,33 @@
       <updated>1714475026132</updated>
       <workItem from="1714475027157" duration="2970000" />
       <workItem from="1714478003565" duration="509000" />
+      <workItem from="1714478547840" duration="2387000" />
+      <workItem from="1714554626685" duration="2222000" />
     </task>
+    <task id="LOCAL-00001" summary="Publish/suscribe">
+      <option name="closed" value="true" />
+      <created>1714478788885</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1714478788885</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Publish/suscribe">
+      <option name="closed" value="true" />
+      <created>1714478811322</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1714478811322</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Publish/suscribe" />
+    <option name="LAST_COMMIT_MESSAGE" value="Publish/suscribe" />
   </component>
 </project>
