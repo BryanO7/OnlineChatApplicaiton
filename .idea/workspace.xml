@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3bbac00-5d71-4c8c-a0fa-5fb35a35efc6" name="Changes" comment="emit_logs.py and receive_logs.py fused in GroupChat">
+    <list default="true" id="c3bbac00-5d71-4c8c-a0fa-5fb35a35efc6" name="Changes" comment="">
+
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,7 +53,6 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.completion&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -74,51 +74,10 @@
       <updated>1714475026132</updated>
       <workItem from="1714475027157" duration="2970000" />
       <workItem from="1714478003565" duration="509000" />
-      <workItem from="1714478547840" duration="2387000" />
-      <workItem from="1714554626685" duration="4550000" />
-      <workItem from="1714559312285" duration="1196000" />
-      <workItem from="1714560513351" duration="428000" />
-      <workItem from="1714560949528" duration="324000" />
-      <workItem from="1714571328886" duration="725000" />
-      <workItem from="1714900922881" duration="1000" />
-      <workItem from="1714901821536" duration="718000" />
-      <workItem from="1715073350914" duration="1000" />
-      <workItem from="1715074847502" duration="599000" />
-      <workItem from="1715157413364" duration="5159000" />
     </task>
-    <task id="LOCAL-00001" summary="Publish/suscribe">
-      <option name="closed" value="true" />
-      <created>1714478788885</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1714478788885</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Publish/suscribe">
-      <option name="closed" value="true" />
-      <created>1714478811322</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1714478811322</updated>
-    </task>
-    <task id="LOCAL-00003" summary="emit_logs.py and receive_logs.py fused in GroupChat">
-      <option name="closed" value="true" />
-      <created>1714557186057</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1714557186057</updated>
-    </task>
-    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Publish/suscribe" />
-    <MESSAGE value="emit_logs.py and receive_logs.py fused in GroupChat" />
-    <option name="LAST_COMMIT_MESSAGE" value="emit_logs.py and receive_logs.py fused in GroupChat" />
   </component>
 </project>
