@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+#new branch
 import pika
 import threading
 import sys
@@ -13,7 +14,7 @@ def emit_log(message):
     print(f" [x] Sent {message}")
 
     connection.close()
-
+#d
 def receive_logs():
     connection = pika.BlockingConnection(pika.ConnectionParameters(host='localhost'))
     channel = connection.channel()
