@@ -2,8 +2,8 @@ import threading
 from tkinter import *
 from tkinter import simpledialog
 import grpc
-import chat_pb2 as chat
-import chat_pb2_grpc as rpc
+import grpc_pb2 as chat
+import grpc_pb2_grpc as rpc
 import socket
 
 def get_local_ip():
