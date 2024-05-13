@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3bbac00-5d71-4c8c-a0fa-5fb35a35efc6" name="Changes" comment="">
-
+    <list default="true" id="c3bbac00-5d71-4c8c-a0fa-5fb35a35efc6" name="Changes" comment="&#10;hola">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GroupChat.py" beforeDir="false" afterPath="$PROJECT_DIR$/GroupChat.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server.py" beforeDir="false" afterPath="$PROJECT_DIR$/Server.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,13 +22,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;BryanO7&quot;
-  }
+  &quot;lastFilter&quot;: {}
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
@@ -47,7 +46,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;branch1&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -74,10 +73,51 @@
       <updated>1714475026132</updated>
       <workItem from="1714475027157" duration="2970000" />
       <workItem from="1714478003565" duration="509000" />
+      <workItem from="1715608466382" duration="3487000" />
     </task>
+    <task id="LOCAL-00001" summary="&#10;arreglos">
+      <option name="closed" value="true" />
+      <created>1715165992085</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1715165992085</updated>
+    </task>
+    <task id="LOCAL-00002" summary="&#10;arreglos">
+      <option name="closed" value="true" />
+      <created>1715166842618</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1715166842618</updated>
+    </task>
+    <task id="LOCAL-00003" summary="&#10;hola">
+      <option name="closed" value="true" />
+      <created>1715166849331</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1715166849331</updated>
+    </task>
+    <task id="LOCAL-00004" summary="&#10;hola">
+      <option name="closed" value="true" />
+      <created>1715166854834</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1715166854834</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="emit_logs.py and receive_logs.py fused in GroupChat" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
+    <MESSAGE value="&#10;arreglos" />
+    <MESSAGE value="&#10;hola" />
+    <option name="LAST_COMMIT_MESSAGE" value="&#10;hola" />
   </component>
 </project>

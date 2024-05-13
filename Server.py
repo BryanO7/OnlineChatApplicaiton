@@ -12,29 +12,35 @@ class ChatServer:
     def get_client_address(self, username):
         return self.redis_client.hget("clients", username)
 
-    def add_chat(self, chat_id, chat_address):
+    def add_chat(self, chat_id, ip_address, port):
+        chat_address = f"{ip_address}:{port}"
         self.redis_client.hset("chats", chat_id, chat_address)
 
     def get_chat_address(self, chat_id):
-        return self.redis_client.hget("chats", chat_id)
+        chat_address = self.redis_client.hget("chats", chat_id)
+        if chat_address:
+            return tuple(chat_address.decode().split(':'))
+        return None
 
     def get_all_chat_addresses(self):
         return self.redis_client.hgetall("chats")
-# Ejemplo de uso
-if __name__ == "__main__":
-    server = ChatServer()
-
+# Ejemplo de uso#
+#if __name__ == "__main__":
+   # server = ChatServer()
+#print("hola")
     # Registro automático de clientes
-    server.register_client("usuario1", "192.168.1.100", 12345)
-    server.register_client("usuario2", "192.168.1.101", 54321)
+#    server.register_client("usuario1", "localhost", 12345)
+#    server.register_client("usuario2", "localhost", 54321)
 
     # Obtener la dirección del cliente
-    client_address = server.get_client_address("usuario1")
-    print("Dirección del cliente usuario1:", client_address)
+ #   client_address = server.get_client_address("usuario1")
+  #  print("Dirección del cliente usuario1:", client_address)
 
     # Agregar un chat
-    server.add_chat("grupo1", "192.168.1.200:8000")
+#server.add_chat("grupo1", "127.0.0.1", 8000)
+#chat_address = server.get_chat_address("grupo1")
+#print("Dirección del chat grupo1:", chat_address)  # Esto imprimirá ('127.0.0.1', '8000')
 
     # Obtener la dirección del chat
-    chat_address = server.get_chat_address("grupo1")
-    print("Dirección del chat grupo1:", chat_address)
+   # chat_address = server.get_chat_address("grupo1")
+    #print("Dirección del chat grupo1:", chat_address)
