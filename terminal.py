@@ -1,9 +1,11 @@
+# Terminal.py
 import threading
-from Server import ChatServer
+from GroupChat import GroupChat
 
 class Terminal:
-    def __init__(self):
-        server = ChatServer()
+    def __init__(self, name_server, group_chat):
+        self.name_server = name_server
+        self.group_chat = group_chat
         self.username = None
         self.run_terminal()
 
@@ -31,28 +33,21 @@ class Terminal:
 
     def connect_chat(self):
         chat_id = input("Enter chat ID to connect: ")
-        # Assume a method to connect to chat; might need to handle group/private chats differently
-        self.server.connect_to_chat(chat_id, self.username)
+        # Use GroupChat's consume method to handle connection and message passing
+        self.group_chat.consume(chat_id)
 
     def subscribe_group_chat(self):
         group_id = input("Enter group chat ID to subscribe: ")
-        # Check if chat exists, create if not, and subscribe
-        if not self.server.chat_exists(group_id):
-            self.server.create_group_chat(group_id)
-        self.server.subscribe_to_chat(group_id, self.username)
+        if not self.name_server.chat_exists(group_id):
+            print(f"Group chat '{group_id}' created.")
+        else:
+            print(f"Subscribing to existing group chat '{group_id}'.")
 
-    def discover_chats(self):
-        chats = self.server.get_all_chat_addresses()
-        print("Active chats:")
-        for chat_id, address in chats.items():
-            print(f"Chat ID: {chat_id}, Address: {address}")
-
-    def access_insult_channel(self):
-        recipient = input("Enter recipient's username for the insult: ")
-        insult = input("Enter your insult message: ")
-        self.server.send_insult_message(recipient, insult)
+    # Add other methods as needed...
 
 # Example usage
 if __name__ == "__main__":
-    server = ChatServer()  # Assuming ChatServer is properly defined elsewhere
-    terminal = Terminal()
+    from Server import NameServer  # Assuming correct import
+    name_server = NameServer()
+    group_chat = GroupChat()
+    terminal = Terminal(name_server, group_chat)

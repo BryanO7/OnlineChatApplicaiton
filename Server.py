@@ -15,3 +15,11 @@ class NameServer:
     def all_chats(self):
         # Retrieve all chats and their details
         return self.redis_client.hgetall("chat_namespace")
+
+    def chat_exists(self, chat_id):
+        # Check if chat exists
+        return self.redis_client.hexists("chat_namespace", chat_id)
+
+    def register_chat(self, chat_id):
+        # Register chat
+        self.redis_client.hset("chat_namespace", chat_id,"chat_group")
