@@ -1,6 +1,7 @@
 # Terminal.py
-import threading
 from GroupChat import GroupChat
+from Server import NameServer
+
 
 class Terminal:
     def __init__(self, name_server, group_chat):
@@ -11,6 +12,7 @@ class Terminal:
 
     def run_terminal(self):
         self.username = input("Enter your username: ")
+        self.name_server.register_client(self.username)
 
         while True:
             print("\nOptions:")
@@ -43,11 +45,13 @@ class Terminal:
         else:
             print(f"Subscribing to existing group chat '{group_id}'.")
 
-    # Add other methods as needed...
-
+    def discover_chats(self):
+        print("Available chats:")
+        chats = self.name_server.all_chats()
+        for chat_id, chat_type in chats.items():
+            print(f"{chat_id}: {chat_type}")
 # Example usage
 if __name__ == "__main__":
-    from Server import NameServer  # Assuming correct import
     name_server = NameServer()
     group_chat = GroupChat()
     terminal = Terminal(name_server, group_chat)

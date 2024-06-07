@@ -4,10 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3bbac00-5d71-4c8c-a0fa-5fb35a35efc6" name="Changes" comment="&#10;hola">
+    <list default="true" id="c3bbac00-5d71-4c8c-a0fa-5fb35a35efc6" name="Changes" comment="groupchat funcionando en terminal.py">
+      <change afterPath="$PROJECT_DIR$/chat_pb2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chat_pb2_grpc.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dump.rdb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/proto/chat.proto" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupChat.py" beforeDir="false" afterPath="$PROJECT_DIR$/GroupChat.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server.py" beforeDir="false" afterPath="$PROJECT_DIR$/Server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terminal.py" beforeDir="false" afterPath="$PROJECT_DIR$/terminal.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +42,9 @@
   &quot;associatedIndex&quot;: 3
 }</component>
   <component name="ProjectId" id="2foksaTxNrLFo8K8EY1vjJXkPR5" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -55,6 +61,13 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/proto" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -73,7 +86,20 @@
       <updated>1714475026132</updated>
       <workItem from="1714475027157" duration="2970000" />
       <workItem from="1714478003565" duration="509000" />
-      <workItem from="1715608466382" duration="3487000" />
+      <workItem from="1715608466382" duration="3750000" />
+      <workItem from="1715701545466" duration="4242000" />
+      <workItem from="1715761135222" duration="393000" />
+      <workItem from="1715768671436" duration="4295000" />
+      <workItem from="1715782473767" duration="14086000" />
+      <workItem from="1715851023674" duration="607000" />
+      <workItem from="1715851998108" duration="49000" />
+      <workItem from="1715860386735" duration="125000" />
+      <workItem from="1716192118318" duration="23000" />
+      <workItem from="1716204255249" duration="14000" />
+      <workItem from="1716572074932" duration="601000" />
+      <workItem from="1716740168915" duration="8000" />
+      <workItem from="1717567953039" duration="15000" />
+      <workItem from="1717769255169" duration="2057000" />
     </task>
     <task id="LOCAL-00001" summary="&#10;arreglos">
       <option name="closed" value="true" />
@@ -107,7 +133,31 @@
       <option name="project" value="LOCAL" />
       <updated>1715166854834</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Trabajando para uniir GroupChat.py y Server.py">
+      <option name="closed" value="true" />
+      <created>1715612161527</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1715612161527</updated>
+    </task>
+    <task id="LOCAL-00006" summary="GroupChat.py correcto">
+      <option name="closed" value="true" />
+      <created>1715772311519</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1715772311519</updated>
+    </task>
+    <task id="LOCAL-00007" summary="groupchat funcionando en terminal.py">
+      <option name="closed" value="true" />
+      <created>1715795407009</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1715795407009</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -118,6 +168,9 @@
     <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
     <MESSAGE value="&#10;arreglos" />
     <MESSAGE value="&#10;hola" />
-    <option name="LAST_COMMIT_MESSAGE" value="&#10;hola" />
+    <MESSAGE value="Trabajando para uniir GroupChat.py y Server.py" />
+    <MESSAGE value="GroupChat.py correcto" />
+    <MESSAGE value="groupchat funcionando en terminal.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="groupchat funcionando en terminal.py" />
   </component>
 </project>
