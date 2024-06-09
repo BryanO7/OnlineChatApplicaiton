@@ -4,13 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3bbac00-5d71-4c8c-a0fa-5fb35a35efc6" name="Changes" comment="groupchat funcionando en terminal.py">
-      <change afterPath="$PROJECT_DIR$/chat_pb2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chat_pb2_grpc.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dump.rdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proto/chat.proto" afterDir="false" />
+    <list default="true" id="c3bbac00-5d71-4c8c-a0fa-5fb35a35efc6" name="Changes" comment="grpc funcionando, falta nueva terminal">
+      <change afterPath="$PROJECT_DIR$/chat.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/private_chat.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/private_chat_combined.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GroupChat.py" beforeDir="false" afterPath="$PROJECT_DIR$/GroupChat.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server.py" beforeDir="false" afterPath="$PROJECT_DIR$/Server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dump.rdb" beforeDir="false" afterPath="$PROJECT_DIR$/dump.rdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proto/chat.proto" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/terminal.py" beforeDir="false" afterPath="$PROJECT_DIR$/terminal.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,6 +23,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Python Stub" />
         <option value="Python Script" />
       </list>
     </option>
@@ -99,7 +102,10 @@
       <workItem from="1716572074932" duration="601000" />
       <workItem from="1716740168915" duration="8000" />
       <workItem from="1717567953039" duration="15000" />
-      <workItem from="1717769255169" duration="2057000" />
+      <workItem from="1717769255169" duration="6231000" />
+      <workItem from="1717775550437" duration="3998000" />
+      <workItem from="1717836308466" duration="5280000" />
+      <workItem from="1717860759106" duration="5243000" />
     </task>
     <task id="LOCAL-00001" summary="&#10;arreglos">
       <option name="closed" value="true" />
@@ -157,11 +163,55 @@
       <option name="project" value="LOCAL" />
       <updated>1715795407009</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Grpc entre el server y el usuario en proceso">
+      <option name="closed" value="true" />
+      <created>1717771520593</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1717771520593</updated>
+    </task>
+    <task id="LOCAL-00009" summary="grpc funcionando, falta nueva terminal">
+      <option name="closed" value="true" />
+      <created>1717863027359</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1717863027359</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="false" />
+                </map>
+              </option>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="branch1" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="emit_logs.py and receive_logs.py fused in GroupChat" />
@@ -171,6 +221,8 @@
     <MESSAGE value="Trabajando para uniir GroupChat.py y Server.py" />
     <MESSAGE value="GroupChat.py correcto" />
     <MESSAGE value="groupchat funcionando en terminal.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="groupchat funcionando en terminal.py" />
+    <MESSAGE value="Grpc entre el server y el usuario en proceso" />
+    <MESSAGE value="grpc funcionando, falta nueva terminal" />
+    <option name="LAST_COMMIT_MESSAGE" value="grpc funcionando, falta nueva terminal" />
   </component>
 </project>

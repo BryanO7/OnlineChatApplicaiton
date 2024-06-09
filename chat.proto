@@ -1,0 +1,64 @@
+syntax = "proto3";
+
+package chat;
+
+service ChatService {
+  rpc RegisterClient (ClientRequest) returns (ClientResponse) {}
+  rpc GetClientAddress (ClientRequest) returns (ClientResponse) {}
+  rpc SubscribeGroupChat (ChatSubscriptionRequest) returns (ChatResponse) {}
+  rpc DiscoverChats (Empty) returns (ChatListResponse) {}
+  rpc SendMessage (MessageRequest) returns (MessageResponse) {}
+  rpc GetMessages (ChatRequest) returns (MessageListResponse) {}
+}
+
+message ClientRequest {
+  string username = 1;
+}
+
+message ClientResponse {
+  string message = 1;
+}
+
+message ChatSubscriptionRequest {
+  string chat_id = 1;
+  string queue_name = 2;
+}
+
+message ChatRequest {
+  string chat_id = 1;
+  string queue_name = 2;
+}
+
+message ChatResponse {
+  string message = 1;
+}
+
+message Empty {}
+
+message ChatInfo {
+  string chat_id = 1;
+}
+
+message ChatListResponse {
+  repeated ChatInfo chats = 1;
+}
+
+message MessageRequest {
+  string chat_id = 1;
+  string username = 2;
+  string message = 3;
+}
+
+message MessageResponse {
+  string message = 1;
+}
+
+message MessageListResponse {
+  repeated Message messages = 1;
+}
+
+message Message {
+  string username = 1;
+  string message = 2;
+  string timestamp = 3;
+}

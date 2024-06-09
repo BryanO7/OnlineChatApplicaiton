@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package private_chat;
+
+service PrivateChatService {
+  rpc EstablishConnection(ConnectionRequest) returns (ConnectionResponse) {}
+  rpc SendMessage(MessageRequest) returns (MessageResponse) {}
+  rpc ReceiveMessages(Empty) returns (stream MessageResponse) {}
+}
+
+message ConnectionRequest {
+  string username = 1;
+  string target_username = 2;
+}
+
+message ConnectionResponse {
+  string message = 1;
+}
+
+message MessageRequest {
+  string username = 1;
+  string target_username = 2;
+  string message = 3;
+}
+
+message MessageResponse {
+  string username = 1;
+  string message = 2;
+}
+
+message Empty {}
