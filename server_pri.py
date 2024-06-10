@@ -41,15 +41,15 @@ def send_direct_message(sender, recipient, port, message):
         print(f"Error sending message to {recipient}: {e}")
 
 def serve():
-    server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
-    privado_pb2_grpc.add_PrivadoServiceServicer_to_server(PrivadoService(), server)
-    server.add_insecure_port('[::]:9999')
-    server.start()
+    server2 = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
+    privado_pb2_grpc.add_PrivadoServiceServicer_to_server(PrivadoService(), server2)
+    server2.add_insecure_port('[::]:9999')
+    server2.start()
     try:
         while True:
             time.sleep(86400)
     except KeyboardInterrupt:
-        server.stop(0)
+        server2.stop(0)
 
 if __name__ == '__main__':
     serve()

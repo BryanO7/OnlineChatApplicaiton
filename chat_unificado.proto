@@ -2,6 +2,7 @@ syntax = "proto3";
 
 package chat;
 
+// Definiciones para el servicio de chat unificado (grupal y privado)
 service ChatService {
   rpc RegisterClient (ClientRequest) returns (ClientResponse) {}
   rpc GetClientAddress (ClientRequest) returns (ClientResponse) {}
@@ -11,10 +12,16 @@ service ChatService {
   rpc EstablishConnection (ConnectionRequest) returns (ConnectionResponse) {}
   rpc SendMessageToUser (PrivateMessageRequest) returns (PrivateMessageResponse) {}
   rpc ReceiveMessagesFromUser (Empty) returns (stream PrivateMessageResponse) {}
+
+  rpc RegisterUser (UserRequest) returns (Response) {}
+  rpc GetUserPort (UserRequest) returns (UserResponse) {}
+  rpc SendMessage (DirectMessageRequest) returns (Response) {}
 }
 
+// Mensajes comunes
 message Empty {}
 
+// Mensajes para el servicio de chat grupal
 message ClientRequest {
   string username = 1;
 }
@@ -41,6 +48,7 @@ message ChatListResponse {
   repeated ChatInfo chats = 1;
 }
 
+// Mensajes para listar usuarios
 message UserListResponse {
   repeated User users = 1;
 }
@@ -51,6 +59,7 @@ message User {
   string port = 3;
 }
 
+// Mensajes para el servicio de chat privado
 message ConnectionRequest {
   string username = 1;
   string target_username = 2;
@@ -85,4 +94,23 @@ message ResponseStatus {
   }
   Code code = 1;
   string message = 2;
+}
+
+message UserRequest {
+  string username = 1;
+  int32 port = 2;
+}
+
+message UserResponse {
+  string port = 1;
+}
+
+message DirectMessageRequest {
+  string sender = 1;
+  string recipient = 2;
+  string content = 3;
+}
+
+message Response {
+  string message = 1;
 }

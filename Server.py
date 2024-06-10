@@ -4,7 +4,12 @@ import grpc
 from concurrent import futures
 import chat_unificado_pb2
 import chat_unificado_pb2_grpc
+import privado_pb2
+import privado_pb2_grpc
 import pika
+import time
+
+pending_messages = {}
 
 class ChatService(chat_unificado_pb2_grpc.ChatServiceServicer):
     def __init__(self, name_server):
@@ -35,7 +40,6 @@ class ChatService(chat_unificado_pb2_grpc.ChatServiceServicer):
         else:
             print(f"Chat {chat_id} already exists.")
 
-        # Bind the queue to the exchange
         connection = pika.BlockingConnection(pika.ConnectionParameters('localhost'))
         channel = connection.channel()
         exchange_name = f'group_chat_{chat_id}'
@@ -99,6 +103,50 @@ class ChatService(chat_unificado_pb2_grpc.ChatServiceServicer):
             while self.messages[username]:
                 message = self.messages[username].pop(0)
                 yield message
+        else:
+            yield chat_unificado_pb2.PrivateMessageResponse(username=username, message="No new messages")
+
+class PrivadoService(privado_pb2_grpc.PrivadoServiceServicer):
+    def __init__(self, name_server):
+        self.name_server = name_server
+
+    def RegisterUser(self, request, context):
+        username = request.username
+        port = request.port
+        self.name_server.register_client(username, port)
+        return privado_pb2.Response(message=f"User {username} registered with port {port}")
+
+    def GetUserPort(self, request, context):
+        address = self.name_server.get_client_address(request.username)
+        if address:
+            _, port = address.decode().split(":")
+            return privado_pb2.UserResponse(port=port)
+        else:
+            return privado_pb2.UserResponse(port="")
+
+    def SendMessage(self, request, context):
+        recipient = request.recipient
+        address = self.name_server.get_client_address(recipient)
+        if address:
+            _, port = address.decode().split(":")
+            send_direct_message(request.sender, recipient, port, request.content)
+            return privado_pb2.Response(message="Message sent")
+        else:
+            # Store message if recipient is not online
+            if recipient not in pending_messages:
+                pending_messages[recipient] = []
+            pending_messages[recipient].append((request.sender, request.content))
+            return privado_pb2.Response(message="User not online. Message stored")
+
+def send_direct_message(sender, recipient, port, message):
+    try:
+        target_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        target_socket.connect(('localhost', int(port)))
+        target_socket.send(f"Message from {sender}: {message}".encode('utf-8'))
+        target_socket.close()
+    except Exception as e:
+        print(f"Error sending message to {recipient}: {e}")
+
 
 class NameServer:
     def __init__(self):
@@ -132,12 +180,21 @@ class NameServer:
 def serve():
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
     name_server = NameServer()
+
     chat_service = ChatService(name_server)
+    privado_service = PrivadoService(name_server)
+
     chat_unificado_pb2_grpc.add_ChatServiceServicer_to_server(chat_service, server)
+    privado_pb2_grpc.add_PrivadoServiceServicer_to_server(privado_service, server)
+
     server.add_insecure_port('[::]:50051')
     server.start()
     print("Server started and listening on port 50051")
-    server.wait_for_termination()
+    try:
+        while True:
+            time.sleep(86400)
+    except KeyboardInterrupt:
+        server.stop(0)
 
 if __name__ == '__main__':
     serve()
