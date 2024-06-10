@@ -5,16 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c3bbac00-5d71-4c8c-a0fa-5fb35a35efc6" name="Changes" comment="grpc funcionando, falta nueva terminal">
-      <change afterPath="$PROJECT_DIR$/chat_unificado.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cliente_priv.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/privado.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server_pri.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server.py" beforeDir="false" afterPath="$PROJECT_DIR$/Server.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat_pb2.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat_pb2_grpc.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat_unificado.proto" beforeDir="false" afterPath="$PROJECT_DIR$/chat_unificado.proto" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dump.rdb" beforeDir="false" afterPath="$PROJECT_DIR$/dump.rdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/private_chat.proto" beforeDir="false" afterPath="$PROJECT_DIR$/private_chat.proto" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/private_chat_combined.py" beforeDir="false" afterPath="$PROJECT_DIR$/private_chat_combined.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/private_chat_pb2.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/private_chat_pb2_grpc.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/terminal.py" beforeDir="false" afterPath="$PROJECT_DIR$/terminal.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -109,7 +107,7 @@
       <workItem from="1717836308466" duration="5280000" />
       <workItem from="1717860759106" duration="5243000" />
       <workItem from="1717953075653" duration="9457000" />
-      <workItem from="1718005900345" duration="640000" />
+      <workItem from="1718005900345" duration="11902000" />
     </task>
     <task id="LOCAL-00001" summary="&#10;arreglos">
       <option name="closed" value="true" />
@@ -199,7 +197,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717953340460</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="grpc funcionando, falta nueva terminal">
+      <option name="closed" value="true" />
+      <created>1718006604485</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1718006604485</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

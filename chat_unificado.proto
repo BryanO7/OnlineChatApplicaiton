@@ -2,33 +2,29 @@ syntax = "proto3";
 
 package chat;
 
-// Definiciones para el servicio de chat grupal
 service ChatService {
   rpc RegisterClient (ClientRequest) returns (ClientResponse) {}
   rpc GetClientAddress (ClientRequest) returns (ClientResponse) {}
   rpc SubscribeGroupChat (ChatSubscriptionRequest) returns (ChatResponse) {}
   rpc DiscoverChats (Empty) returns (ChatListResponse) {}
   rpc ListUsers (Empty) returns (UserListResponse) {}
+  rpc EstablishConnection (ConnectionRequest) returns (ConnectionResponse) {}
+  rpc SendMessageToUser (PrivateMessageRequest) returns (PrivateMessageResponse) {}
+  rpc ReceiveMessagesFromUser (Empty) returns (stream PrivateMessageResponse) {}
 }
 
-// Mensajes comunes
 message Empty {}
 
-// Mensajes para el servicio de chat grupal
 message ClientRequest {
   string username = 1;
 }
 
 message ClientResponse {
   string message = 1;
+  NetworkEndpoint endpoint = 2;
 }
 
 message ChatSubscriptionRequest {
-  string chat_id = 1;
-  string queue_name = 2;
-}
-
-message ChatRequest {
   string chat_id = 1;
   string queue_name = 2;
 }
@@ -45,27 +41,6 @@ message ChatListResponse {
   repeated ChatInfo chats = 1;
 }
 
-message MessageRequest {
-  string chat_id = 1;
-  string username = 2;
-  string message = 3;
-}
-
-message MessageResponse {
-  string message = 1;
-}
-
-message MessageListResponse {
-  repeated Message messages = 1;
-}
-
-message Message {
-  string username = 1;
-  string message = 2;
-  string timestamp = 3;
-}
-
-// Mensajes para listar usuarios
 message UserListResponse {
   repeated User users = 1;
 }
@@ -74,4 +49,40 @@ message User {
   string username = 1;
   string ip = 2;
   string port = 3;
+}
+
+message ConnectionRequest {
+  string username = 1;
+  string target_username = 2;
+}
+
+message ConnectionResponse {
+  ResponseStatus status = 1;
+  NetworkEndpoint endpoint = 2;
+}
+
+message PrivateMessageRequest {
+  string username = 1;
+  string target_username = 2;
+  string message = 3;
+}
+
+message PrivateMessageResponse {
+  string username = 1;
+  string message = 2;
+}
+
+message NetworkEndpoint {
+  string ip = 1;
+  int32 port = 2;
+}
+
+message ResponseStatus {
+  enum Code {
+    OK = 0;
+    NOT_FOUND = 1;
+    ERROR = 2;
+  }
+  Code code = 1;
+  string message = 2;
 }
