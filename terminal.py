@@ -2,24 +2,26 @@ import grpc
 import subprocess
 import threading
 from GroupChat import GroupChat
-import chat_pb2
-import chat_pb2_grpc
-from private_chat_combined import PrivateChatClient, serve, start_receiving
-
+import chat_unificado_pb2
+import chat_unificado_pb2_grpc
+from private_chat_combined import PrivateChatClient, serve as serve_private, start_receiving
 
 class ChatClient:
     def __init__(self, host='localhost', port=50051):
         self.channel = grpc.insecure_channel(f'{host}:{port}')
-        self.stub = chat_pb2_grpc.ChatServiceStub(self.channel)
+        self.stub = chat_unificado_pb2_grpc.ChatServiceStub(self.channel)
 
     def register_client(self, username):
-        return self.stub.RegisterClient(chat_pb2.ClientRequest(username=username))
+        return self.stub.RegisterClient(chat_unificado_pb2.ClientRequest(username=username))
 
     def subscribe_group_chat(self, chat_id, queue_name):
-        return self.stub.SubscribeGroupChat(chat_pb2.ChatSubscriptionRequest(chat_id=chat_id, queue_name=queue_name))
+        return self.stub.SubscribeGroupChat(chat_unificado_pb2.ChatSubscriptionRequest(chat_id=chat_id, queue_name=queue_name))
 
     def discover_chats(self):
-        return self.stub.DiscoverChats(chat_pb2.Empty())
+        return self.stub.DiscoverChats(chat_unificado_pb2.Empty())
+
+    def list_clients(self):
+        return self.stub.ListUsers(chat_unificado_pb2.Empty())
 
     def chat_exists(self, chat_id):
         chats = self.discover_chats()
@@ -44,8 +46,9 @@ class Terminal:
             print("2. Subscribe to group chat")
             print("3. Discover chats")
             print("4. Start private chat")
-            print("5. Exit")
-            choice = input("Choose an option (1-5): ")
+            print("5. List all clients")
+            print("6. Exit")
+            choice = input("Choose an option (1-6): ")
 
             if choice == '1':
                 self.connect_group_chat()
@@ -56,10 +59,12 @@ class Terminal:
             elif choice == '4':
                 self.start_private_chat()
             elif choice == '5':
+                self.list_all_clients()
+            elif choice == '6':
                 print("Exiting the application. Goodbye!")
                 break
             else:
-                print("Invalid option. Please select from 1-5.")
+                print("Invalid option. Please select from 1-6.")
 
     def connect_group_chat(self):
         chat_id = input("Enter chat ID to connect: ")
@@ -83,14 +88,12 @@ class Terminal:
             print(f"Group Name: {chat.chat_id}")
 
     def start_private_chat(self):
-        target_username = input("Enter the username of the person you want to chat with: ")
-        private_chat_client = PrivateChatClient(self.username, target_username)
-        private_chat_client.establish_connection()
-        threading.Thread(target=start_receiving, args=(private_chat_client,), daemon=True).start()
+        print("por hacer")
 
-        while True:
-            message = input()
-            private_chat_client.send_message(message)
+    def list_all_clients(self):
+        response = self.chat_client.list_clients()
+        for client in response.users:
+           print(f"Username: {client.username}, IP: {client.ip}, Port: {client.port}")
 
     def open_new_terminal(self, chat_id, queue_name):
         subprocess.Popen(['gnome-terminal', '--', 'python3', 'GroupChat.py', chat_id, queue_name])
@@ -102,7 +105,7 @@ if __name__ == "__main__":
     terminal = Terminal(chat_client, group_chat)
 
     # Start the gRPC server for private chat
-    server = serve()
+    server = serve_private()
     print("Private chat server started.")
 
     server.wait_for_termination()

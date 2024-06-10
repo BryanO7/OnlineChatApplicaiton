@@ -2,15 +2,19 @@ syntax = "proto3";
 
 package chat;
 
+// Definiciones para el servicio de chat grupal
 service ChatService {
   rpc RegisterClient (ClientRequest) returns (ClientResponse) {}
   rpc GetClientAddress (ClientRequest) returns (ClientResponse) {}
   rpc SubscribeGroupChat (ChatSubscriptionRequest) returns (ChatResponse) {}
   rpc DiscoverChats (Empty) returns (ChatListResponse) {}
-  rpc SendMessage (MessageRequest) returns (MessageResponse) {}
-  rpc GetMessages (ChatRequest) returns (MessageListResponse) {}
+  rpc ListUsers (Empty) returns (UserListResponse) {}
 }
 
+// Mensajes comunes
+message Empty {}
+
+// Mensajes para el servicio de chat grupal
 message ClientRequest {
   string username = 1;
 }
@@ -32,8 +36,6 @@ message ChatRequest {
 message ChatResponse {
   string message = 1;
 }
-
-message Empty {}
 
 message ChatInfo {
   string chat_id = 1;
@@ -61,4 +63,15 @@ message Message {
   string username = 1;
   string message = 2;
   string timestamp = 3;
+}
+
+// Mensajes para listar usuarios
+message UserListResponse {
+  repeated User users = 1;
+}
+
+message User {
+  string username = 1;
+  string ip = 2;
+  string port = 3;
 }
