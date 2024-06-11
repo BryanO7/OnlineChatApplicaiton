@@ -5,15 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c3bbac00-5d71-4c8c-a0fa-5fb35a35efc6" name="Changes" comment="grpc funcionando, falta nueva terminal">
-      <change afterPath="$PROJECT_DIR$/start-client.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/start-server.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server.py" beforeDir="false" afterPath="$PROJECT_DIR$/Server.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat_unificado.proto" beforeDir="false" afterPath="$PROJECT_DIR$/chat_unificado.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente_priv.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dump.rdb" beforeDir="false" afterPath="$PROJECT_DIR$/dump.rdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server_pri.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/terminal.py" beforeDir="false" afterPath="$PROJECT_DIR$/terminal.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +103,7 @@
       <workItem from="1718005900345" duration="11902000" />
       <workItem from="1718030560461" duration="7072000" />
       <workItem from="1718038840813" duration="4823000" />
-      <workItem from="1718116390207" duration="6617000" />
+      <workItem from="1718116390207" duration="7272000" />
     </task>
     <task id="LOCAL-00001" summary="&#10;arreglos">
       <option name="closed" value="true" />
@@ -233,7 +225,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718048516758</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="grpc funcionando, falta nueva terminal">
+      <option name="closed" value="true" />
+      <created>1718129765150</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1718129765151</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
