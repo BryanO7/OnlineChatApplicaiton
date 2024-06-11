@@ -1,49 +1,62 @@
-#!/usr/bin/env python
 import pika
 import threading
 import sys
+class GroupChat:
+    def __init__(self, host='localhost'):
+        self.host = host
 
-def emit_log(message):
-    connection = pika.BlockingConnection(pika.ConnectionParameters(host='localhost'))
-    channel = connection.channel()
+    def connect_to_rabbitmq(self):
+        connection = pika.BlockingConnection(pika.ConnectionParameters(self.host))
+        channel = connection.channel()
+        return connection, channel
 
-    channel.exchange_declare(exchange='logs', exchange_type='fanout')
+    def receive_messages(self, group_name, queue_name):
+        connection, channel = self.connect_to_rabbitmq()
+        exchange_name = f'group_chat_{group_name}'
+        channel.exchange_declare(exchange=exchange_name, exchange_type='fanout')
 
-    channel.basic_publish(exchange='logs', routing_key='', body=message)
-    print(f" [x] Sent {message}")
+        channel.queue_declare(queue=queue_name)
+        channel.queue_bind(exchange=exchange_name, queue=queue_name)
 
-    connection.close()
-#d
-def receive_logs():
-    connection = pika.BlockingConnection(pika.ConnectionParameters(host='localhost'))
-    channel = connection.channel()
+        def callback(ch, method, properties, body):
+            print(f"[{group_name}] Received: {body.decode()}")
 
-    channel.exchange_declare(exchange='logs', exchange_type='fanout')
+        channel.basic_consume(queue=queue_name, on_message_callback=callback, auto_ack=True)
+        print(f"Joined group '{group_name}' on queue '{queue_name}'. Waiting for messages. To exit press CTRL+C")
+        try:
+            channel.start_consuming()
+        finally:
+            connection.close()
 
-    result = channel.queue_declare(queue='', exclusive=True)
-    queue_name = result.method.queue
+    def send_messages(self, group_name):
+        connection, channel = self.connect_to_rabbitmq()
+        exchange_name = f'group_chat_{group_name}'
+        channel.exchange_declare(exchange=exchange_name, exchange_type='fanout')
 
-    channel.queue_bind(exchange='logs', queue=queue_name)
+        try:
+            while True:
+                message = input()
+                if message.lower() == 'exit':
+                    break
+                channel.basic_publish(exchange=exchange_name, routing_key='', body=message)
+        finally:
+            print("Exiting...")
+            connection.close()
 
-    print(' [*] Waiting for logs. To exit press CTRL+C')
+    def consume(self, group_name, queue_name):
+        # Start a thread to receive messages for the specified group and queue
+        threading.Thread(target=self.receive_messages, args=(group_name, queue_name), daemon=True).start()
 
-    def callback(ch, method, properties, body):
-        print(f" {body}")
+        # Send messages from the main thread
+        self.send_messages(group_name)
 
-    channel.basic_consume(queue=queue_name, on_message_callback=callback, auto_ack=True)
+if __name__ == "__main__":
+    if len(sys.argv) != 3:
+        print("Usage: python GroupChat.py <group_name> <queue_name>")
+        sys.exit(1)
 
-    channel.start_consuming()
+    group_name = sys.argv[1]
+    queue_name = sys.argv[2]
 
-def main():
-    thread_receive = threading.Thread(target=receive_logs)
-    thread_receive.start()
-
-    while True:
-        # Leer la entrada del usuario desde la consola
-        message = input("Ingrese un mensaje: ")
-
-        # Transmitir el mensaje utilizando la función emit_log
-        emit_log(message)
-
-if __name__ == '__main__':
-    main()
+    group_chat = GroupChat()
+    group_chat.consume(group_name, queue_name)

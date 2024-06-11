@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3bbac00-5d71-4c8c-a0fa-5fb35a35efc6" name="Changes" comment="">
-
+    <list default="true" id="c3bbac00-5d71-4c8c-a0fa-5fb35a35efc6" name="Changes" comment="grpc funcionando, falta nueva terminal">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -13,21 +12,23 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExportToHTMLSettings">
+    <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/exportToHTML" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Python Stub" />
         <option value="Python Script" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;BryanO7&quot;
-  }
+  &quot;lastFilter&quot;: {}
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
@@ -39,7 +40,9 @@
   &quot;associatedIndex&quot;: 3
 }</component>
   <component name="ProjectId" id="2foksaTxNrLFo8K8EY1vjJXkPR5" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -47,7 +50,8 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;branch1&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/bryan/Sd/Task1_SD-main/Practica_Final_SD&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -56,6 +60,13 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/proto" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -74,10 +85,201 @@
       <updated>1714475026132</updated>
       <workItem from="1714475027157" duration="2970000" />
       <workItem from="1714478003565" duration="509000" />
+      <workItem from="1715608466382" duration="3750000" />
+      <workItem from="1715701545466" duration="4242000" />
+      <workItem from="1715761135222" duration="393000" />
+      <workItem from="1715768671436" duration="4295000" />
+      <workItem from="1715782473767" duration="14086000" />
+      <workItem from="1715851023674" duration="607000" />
+      <workItem from="1715851998108" duration="49000" />
+      <workItem from="1715860386735" duration="125000" />
+      <workItem from="1716192118318" duration="23000" />
+      <workItem from="1716204255249" duration="14000" />
+      <workItem from="1716572074932" duration="601000" />
+      <workItem from="1716740168915" duration="8000" />
+      <workItem from="1717567953039" duration="15000" />
+      <workItem from="1717769255169" duration="6231000" />
+      <workItem from="1717775550437" duration="3998000" />
+      <workItem from="1717836308466" duration="5280000" />
+      <workItem from="1717860759106" duration="5243000" />
+      <workItem from="1717953075653" duration="9457000" />
+      <workItem from="1718005900345" duration="11902000" />
+      <workItem from="1718030560461" duration="7072000" />
+      <workItem from="1718038840813" duration="4823000" />
+      <workItem from="1718116390207" duration="7272000" />
     </task>
+    <task id="LOCAL-00001" summary="&#10;arreglos">
+      <option name="closed" value="true" />
+      <created>1715165992085</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1715165992085</updated>
+    </task>
+    <task id="LOCAL-00002" summary="&#10;arreglos">
+      <option name="closed" value="true" />
+      <created>1715166842618</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1715166842618</updated>
+    </task>
+    <task id="LOCAL-00003" summary="&#10;hola">
+      <option name="closed" value="true" />
+      <created>1715166849331</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1715166849331</updated>
+    </task>
+    <task id="LOCAL-00004" summary="&#10;hola">
+      <option name="closed" value="true" />
+      <created>1715166854834</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1715166854834</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Trabajando para uniir GroupChat.py y Server.py">
+      <option name="closed" value="true" />
+      <created>1715612161527</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1715612161527</updated>
+    </task>
+    <task id="LOCAL-00006" summary="GroupChat.py correcto">
+      <option name="closed" value="true" />
+      <created>1715772311519</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1715772311519</updated>
+    </task>
+    <task id="LOCAL-00007" summary="groupchat funcionando en terminal.py">
+      <option name="closed" value="true" />
+      <created>1715795407009</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1715795407009</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Grpc entre el server y el usuario en proceso">
+      <option name="closed" value="true" />
+      <created>1717771520593</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1717771520593</updated>
+    </task>
+    <task id="LOCAL-00009" summary="grpc funcionando, falta nueva terminal">
+      <option name="closed" value="true" />
+      <created>1717863027359</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1717863027359</updated>
+    </task>
+    <task id="LOCAL-00010" summary="grpc funcionando, falta nueva terminal">
+      <option name="closed" value="true" />
+      <created>1717953328746</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1717953328747</updated>
+    </task>
+    <task id="LOCAL-00011" summary="grpc funcionando, falta nueva terminal">
+      <option name="closed" value="true" />
+      <created>1717953340460</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1717953340460</updated>
+    </task>
+    <task id="LOCAL-00012" summary="grpc funcionando, falta nueva terminal">
+      <option name="closed" value="true" />
+      <created>1718006604485</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1718006604485</updated>
+    </task>
+    <task id="LOCAL-00013" summary="grpc funcionando, falta nueva terminal">
+      <option name="closed" value="true" />
+      <created>1718030886851</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1718030886851</updated>
+    </task>
+    <task id="LOCAL-00014" summary="grpc funcionando, falta nueva terminal">
+      <option name="closed" value="true" />
+      <created>1718030919907</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1718030919907</updated>
+    </task>
+    <task id="LOCAL-00015" summary="grpc funcionando, falta nueva terminal">
+      <option name="closed" value="true" />
+      <created>1718048516758</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1718048516758</updated>
+    </task>
+    <task id="LOCAL-00016" summary="grpc funcionando, falta nueva terminal">
+      <option name="closed" value="true" />
+      <created>1718129765150</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1718129765151</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="false" />
+                </map>
+              </option>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="branch1" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="emit_logs.py and receive_logs.py fused in GroupChat" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
+    <MESSAGE value="&#10;arreglos" />
+    <MESSAGE value="&#10;hola" />
+    <MESSAGE value="Trabajando para uniir GroupChat.py y Server.py" />
+    <MESSAGE value="GroupChat.py correcto" />
+    <MESSAGE value="groupchat funcionando en terminal.py" />
+    <MESSAGE value="Grpc entre el server y el usuario en proceso" />
+    <MESSAGE value="grpc funcionando, falta nueva terminal" />
+    <option name="LAST_COMMIT_MESSAGE" value="grpc funcionando, falta nueva terminal" />
   </component>
 </project>

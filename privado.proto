@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package privado;
+
+service PrivadoService {
+    rpc RegisterUser (User) returns (Response);
+    rpc GetUserPort (UserRequest) returns (UserResponse);
+    rpc SendMessage (Message) returns (Response);
+}
+
+message User {
+    string username = 1;
+    int32 port = 2;
+}
+
+message UserRequest {
+    string username = 1;
+}
+
+message UserResponse {
+    string port = 1;
+}
+
+message Message {
+    string sender = 1;
+    string recipient = 2;
+    string content = 3;
+}
+
+message Response {
+    string message = 1;
+}
