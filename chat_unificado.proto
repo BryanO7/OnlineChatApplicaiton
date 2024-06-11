@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package chat;
 
-// Definiciones para el servicio de chat unificado (grupal y privado)
+// Definiciones para el servicio de chat unificado (grupal)
 service ChatService {
   rpc RegisterClient (ClientRequest) returns (ClientResponse) {}
   rpc GetClientAddress (ClientRequest) returns (ClientResponse) {}

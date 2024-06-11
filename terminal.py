@@ -122,8 +122,9 @@ class Terminal:
     def connect_group_chat(self):
         chat_id = input("Enter chat ID to connect: ")
         queue_name = input("Enter queue name to connect: ")
+        file_name=('GroupChat.py')
         if self.chat_client.chat_exists(chat_id):
-            self.open_new_terminal(chat_id, queue_name)
+            self.open_new_terminal(chat_id, queue_name,file_name)
         else:
             print("Chat does not exist.")
             return
@@ -142,6 +143,7 @@ class Terminal:
 
     def start_private_chat(self):
         target_username = input("Enter the username of the person you want to chat with: ")
+
         endpoint = self.chat_client.establish_connection(self.username, target_username)
         if endpoint is None:
             print("No se pudo establecer la conexión.")
@@ -159,8 +161,8 @@ class Terminal:
         for client in response.users:
             print(f"Username: {client.username}, IP: {client.ip}, Port: {client.port}")
 
-    def open_new_terminal(self, chat_id, queue_name):
-        subprocess.Popen(['gnome-terminal', '--', 'python3', 'GroupChat.py', chat_id, queue_name])
+    def open_new_terminal(self, chat_id, queue_name, file_name):
+        subprocess.Popen(['gnome-terminal', '--', 'python3', file_name, chat_id, queue_name])
 
     def start_listener(self, port):
         name_server = NameServer()

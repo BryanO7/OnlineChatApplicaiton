@@ -88,23 +88,6 @@ class ChatService(chat_unificado_pb2_grpc.ChatServiceServicer):
                 )
             )
 
-    def SendMessageToUser(self, request, context):
-        username = request.username
-        target_username = request.target_username
-        message = request.message
-        if target_username not in self.messages:
-            self.messages[target_username] = []
-        self.messages[target_username].append(chat_unificado_pb2.PrivateMessageResponse(username=username, message=message))
-        return chat_unificado_pb2.PrivateMessageResponse(message="Message sent")
-
-    def ReceiveMessagesFromUser(self, request, context):
-        username = request.username
-        if username in self.messages:
-            while self.messages[username]:
-                message = self.messages[username].pop(0)
-                yield message
-        else:
-            yield chat_unificado_pb2.PrivateMessageResponse(username=username, message="No new messages")
 
 class PrivadoService(privado_pb2_grpc.PrivadoServiceServicer):
     def __init__(self, name_server):
